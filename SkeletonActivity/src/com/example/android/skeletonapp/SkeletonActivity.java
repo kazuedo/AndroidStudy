@@ -17,6 +17,7 @@
 package com.example.android.skeletonapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -129,7 +130,11 @@ public class SkeletonActivity extends Activity {
      */
     OnClickListener mBackListener = new OnClickListener() {
         public void onClick(View v) {
-            finish();
+            Intent intent = new Intent( SkeletonActivity.this, SkeltonSubActivity.class );
+            intent.putExtra( "INTENT_PARAM", "intent_param_test" );
+            // ‰æ–Ê‘JˆÚ
+            startActivity( intent );
+        	//            finish();
         }
     };
 
